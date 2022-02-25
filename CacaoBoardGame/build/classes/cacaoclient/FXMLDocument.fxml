@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXColorPicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="archorPane" prefHeight="650.0" prefWidth="980.0" style="-fx-background-color: #29323c;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cacaoclient.FXMLDocumentController">
+   <children>
+      <StackPane fx:id="Connect" prefHeight="620.0" prefWidth="980.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="vboxStack" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" StackPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" text="Dirección IP:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="110.0" />
+                     </padding>
+                  </Label>
+                  <JFXTextField fx:id="ip" focusColor="#e1ccec" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="212.0" promptText="Direccion IP" styleClass="jfx-text-field" stylesheets="@styles.css" unFocusColor="#2a7886" />
+                  <Label alignment="CENTER" text="Puerto:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="150.0" />
+                     </padding>
+                  </Label>
+                  <JFXTextField fx:id="pt" focusColor="#e1ccec" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="212.0" promptText="Puerto" styleClass="jfx-text-field" stylesheets="@styles.css" unFocusColor="#2a7886" />
+                  <Label alignment="CENTER" text="Usuario:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="147.0" />
+                     </padding>
+                  </Label>
+                  <JFXTextField fx:id="user" focusColor="#e1ccec" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="212.0" promptText="Usuario" styleClass="jfx-text-field" stylesheets="@styles.css" unFocusColor="#2a7886" />
+                  <Label alignment="CENTER" text="Edad:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="168.0" />
+                     </padding>
+                  </Label>
+                  <JFXTextField fx:id="edad" focusColor="#e1ccec" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="212.0" promptText="Edad" styleClass="jfx-text-field" stylesheets="@styles.css" unFocusColor="#2a7886" />
+                  <Label alignment="CENTER" text="Escoge un color:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXColorPicker fx:id="color" />
+                  <JFXButton alignment="CENTER" buttonType="RAISED" onAction="#Conectarse" ripplerFill="WHITE" style="-fx-background-color: #18b0b0;" styleClass="buttonAgregar" text="Entrar" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas" size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </VBox>
+         </children>
+      </StackPane>
+      <ScrollPane fx:id="mainGame" fitToHeight="true" fitToWidth="true" prefHeight="650.0" prefWidth="980.0" stylesheets="@styles.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <StackPane fx:id="stackGame">
+               <children>
+                  <SplitPane prefHeight="650.0" prefWidth="980.0" style="-fx-background-color: #464646;">
+                    <items>
+                      <AnchorPane fx:id="gameAnchorP" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="963.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="650.0" prefWidth="963.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                       <center>
+                                          <ScrollPane fx:id="scrTablero" fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" hvalue="0.5" pannable="true" stylesheets="@styles.css" vbarPolicy="ALWAYS" vvalue="0.5" BorderPane.alignment="CENTER">
+                                             <content>
+                                                <GridPane fx:id="tablero" alignment="CENTER" gridLinesVisible="true" hgap="1.0" onMouseClicked="#mouseClickedTablero" prefHeight="964.0" prefWidth="963.0" vgap="1.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                      <RowConstraints minHeight="200.0" prefHeight="200.0" vgrow="NEVER" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                </GridPane>
+                                             </content>
+                                             <styleClass>
+                                                <String fx:value="scroll-bar" />
+                                                <String fx:value="paneScrollImage" />
+                                             </styleClass>
+                                          </ScrollPane>
+                                       </center>
+                                       <left>
+                                          <ScrollPane fitToWidth="true" pannable="true" prefHeight="646.0" prefWidth="128.0" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+                                             <content>
+                                                <VBox alignment="TOP_CENTER" prefHeight="632.0" prefWidth="168.0">
+                                                   <children>
+                                                      <Label prefHeight="49.0" prefWidth="112.0" text="Explorada" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fx:id="selvaExploradaImg1" fitHeight="150.0" fitWidth="110.0" onMouseClicked="#mouseClickedSelva1" pickOnBounds="true" preserveRatio="true" />
+                                                      <ImageView fx:id="selvaExploradaImg2" fitHeight="150.0" fitWidth="110.0" layoutX="10.0" layoutY="37.0" onMouseClicked="#mouseClickedSelva2" pickOnBounds="true" preserveRatio="true" />
+                                                      <Label layoutX="31.0" layoutY="10.0" text="Cacao" textAlignment="CENTER" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fitHeight="150.0" fitWidth="110.0" layoutX="10.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/cacao.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="lblCacao" layoutX="80.0" layoutY="337.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="86.0" layoutY="337.0" text="Ficha Sol" textAlignment="CENTER" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fitHeight="150.0" fitWidth="110.0" layoutX="16.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/fichaSol.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="lblFichaSol" layoutX="109.0" layoutY="513.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="73.0" layoutY="540.0" text="Monedas" textAlignment="CENTER" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fitHeight="150.0" fitWidth="110.0" layoutX="16.0" layoutY="567.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/moneda1.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="lblMoneda1" layoutX="109.0" layoutY="513.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fitHeight="150.0" fitWidth="110.0" layoutX="16.0" layoutY="770.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/moneda5.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="lblMoneda5" layoutX="109.0" layoutY="919.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fitHeight="150.0" fitWidth="110.0" layoutX="16.0" layoutY="946.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/moneda10.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="lblMoneda10" layoutX="109.0" layoutY="1095.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="86.0" layoutY="337.0" text="Losetas Selva" textAlignment="CENTER" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ImageView fitHeight="150.0" fitWidth="110.0" layoutX="16.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/losetaSelvaFondo.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="lblLosetaSelva" layoutX="109.0" layoutY="513.0" text="0" textAlignment="CENTER" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                             <styleClass>
+                                                <String fx:value="scroll-pane" />
+                                                <String fx:value="paneScroll" />
+                                             </styleClass>
+                                          </ScrollPane>
+                                       </left>
+                                       <right>
+                                          <ScrollPane prefHeight="646.0" prefWidth="386.0" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+                                             <content>
+                                                <VBox fx:id="playersCard" prefHeight="882.0" prefWidth="355.0">
+                                                   <children>
+                                                      <VBox fx:id="player1" alignment="TOP_CENTER" minHeight="220.0" prefHeight="220.0" prefWidth="350.0" styleClass="card" stylesheets="@styles.css">
+                                                         <children>
+                                                            <HBox fx:id="infoP1" alignment="CENTER" spacing="10.0">
+                                                               <children>
+                                                                  <Label fx:id="nombreP1" text="Elias">
+                                                                     <font>
+                                                                        <Font name="Berlin Sans FB Bold" size="15.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <VBox fx:id="oroP1" alignment="CENTER" prefHeight="19.0" prefWidth="37.0" styleClass="oro" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label fx:id="lblOroP1" text="45">
+                                                                           <font>
+                                                                              <Font name="Berlin Sans FB Bold" size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <Label fx:id="pts1" layoutX="150.0" layoutY="15.0" text="    Pts: 40">
+                                                                     <font>
+                                                                        <Font name="Berlin Sans FB Bold" size="15.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox fx:id="losetasPlayer1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <HBox fx:id="losetasJugador1" alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="2.0" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Pane fx:id="p1Img1" onMouseClicked="#mouseClickedImg1" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                        <Pane fx:id="p1Img2" layoutX="10.0" layoutY="10.0" onMouseClicked="#mouseClickedImg2" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                        <Pane fx:id="p1Img3" layoutX="67.0" layoutY="10.0" onMouseClicked="#mouseClickedImg3" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <VBox alignment="CENTER" prefHeight="80.0" prefWidth="91.0" styleClass="losetaSelva" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label fx:id="lblLosetaP1" text="22">
+                                                                           <font>
+                                                                              <Font name="Berlin Sans FB Bold" size="19.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="CacaoSol1" alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <ImageView fx:id="p1Cacao1" fitHeight="150.0" fitWidth="45.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p1Cacao2" fitHeight="150.0" fitWidth="45.0" layoutX="172.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p1Cacao3" fitHeight="150.0" fitWidth="45.0" layoutX="200.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p1Cacao4" fitHeight="150.0" fitWidth="45.0" layoutX="228.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p1Cacao5" fitHeight="150.0" fitWidth="45.0" layoutX="256.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p1Sol1" fitHeight="150.0" fitWidth="45.0" layoutX="284.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p1Sol2" fitHeight="150.0" fitWidth="45.0" layoutX="312.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p1Sol3" fitHeight="150.0" fitWidth="45.0" layoutX="346.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="Cenote1" alignment="CENTER" prefHeight="50.0" prefWidth="380.0" spacing="4.0">
+                                                               <children>
+                                                                  <VBox fx:id="p1C1" alignment="CENTER" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                     <children>
+                                                                        <Label text="-10">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p1C2" alignment="CENTER" layoutX="183.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="-4">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p1C3" alignment="CENTER" layoutX="202.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="-1">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p1C4" alignment="CENTER" layoutX="221.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="0">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p1C5" alignment="CENTER" layoutX="240.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="2">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p1C6" alignment="CENTER" layoutX="259.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="4">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p1C7" alignment="CENTER" layoutX="278.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="7">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p1C8" alignment="CENTER" layoutX="297.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="11">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p1C9" alignment="CENTER" layoutX="316.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="16">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                                         </VBox.margin>
+                                                         <padding>
+                                                            <Insets left="4.0" right="4.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox fx:id="player2" alignment="TOP_CENTER" layoutX="11.0" layoutY="11.0" minHeight="220.0" prefHeight="220.0" prefWidth="350.0" styleClass="card" stylesheets="@styles.css" visible="false">
+                                                         <children>
+                                                            <HBox fx:id="infoP11" alignment="CENTER" spacing="10.0">
+                                                               <children>
+                                                                  <Label fx:id="nombreP2" text="Elias">
+                                                                     <font>
+                                                                        <Font name="Berlin Sans FB Bold" size="15.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <VBox fx:id="oroP11" alignment="CENTER" prefHeight="19.0" prefWidth="37.0" styleClass="oro" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label fx:id="lblOroP2" text="45">
+                                                                           <font>
+                                                                              <Font name="Berlin Sans FB Bold" size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <Label fx:id="pts2" text="    Pts: 40">
+                                                                     <font>
+                                                                        <Font name="Berlin Sans FB Bold" size="15.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox fx:id="losetasPlayer2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <HBox fx:id="losetasJugador2" alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="2.0" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Pane fx:id="p2Img1" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                        <Pane fx:id="p2Img2" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                        <Pane fx:id="p2Img3" layoutX="67.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <VBox alignment="CENTER" prefHeight="80.0" prefWidth="91.0" styleClass="losetaSelva" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label fx:id="lblLosetaP2" text="22">
+                                                                           <font>
+                                                                              <Font name="Berlin Sans FB Bold" size="19.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="CacaoSol2" alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <ImageView fx:id="p2Cacao1" fitHeight="150.0" fitWidth="45.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p2Cacao2" fitHeight="150.0" fitWidth="45.0" layoutX="172.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p2Cacao3" fitHeight="150.0" fitWidth="45.0" layoutX="200.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p2Cacao4" fitHeight="150.0" fitWidth="45.0" layoutX="228.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p2Cacao5" fitHeight="150.0" fitWidth="45.0" layoutX="256.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p2Sol1" fitHeight="150.0" fitWidth="45.0" layoutX="284.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p2Sol2" fitHeight="150.0" fitWidth="45.0" layoutX="312.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p2Sol3" fitHeight="150.0" fitWidth="45.0" layoutX="346.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="Cenote2" alignment="CENTER" prefHeight="50.0" prefWidth="380.0" spacing="4.0">
+                                                               <children>
+                                                                  <VBox fx:id="p2C1" alignment="CENTER" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                     <children>
+                                                                        <Label text="-10">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p2C2" alignment="CENTER" layoutX="183.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="-4">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p2C3" alignment="CENTER" layoutX="202.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="-1">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p2C4" alignment="CENTER" layoutX="221.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="0">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p2C5" alignment="CENTER" layoutX="240.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="2">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p2C6" alignment="CENTER" layoutX="259.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="4">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p2C7" alignment="CENTER" layoutX="278.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="7">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p2C8" alignment="CENTER" layoutX="297.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="11">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p2C9" alignment="CENTER" layoutX="316.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="16">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="4.0" right="4.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox fx:id="player3" alignment="TOP_CENTER" layoutX="10.0" layoutY="298.0" minHeight="220.0" prefHeight="220.0" prefWidth="350.0" styleClass="card" stylesheets="@styles.css" visible="false">
+                                                         <children>
+                                                            <HBox fx:id="infoP111" alignment="CENTER" spacing="10.0">
+                                                               <children>
+                                                                  <Label fx:id="nombreP3" text="Elias">
+                                                                     <font>
+                                                                        <Font name="Berlin Sans FB Bold" size="15.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <VBox fx:id="oroP111" alignment="CENTER" prefHeight="19.0" prefWidth="37.0" styleClass="oro" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label fx:id="lblOroP3" text="45">
+                                                                           <font>
+                                                                              <Font name="Berlin Sans FB Bold" size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <Label fx:id="pts3" text="    Pts: 40">
+                                                                     <font>
+                                                                        <Font name="Berlin Sans FB Bold" size="15.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox fx:id="losetasPlayer3" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <HBox fx:id="losetasJugador3" alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="2.0" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Pane fx:id="p3Img1" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                        <Pane fx:id="p3Img2" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                        <Pane fx:id="p3Img3" layoutX="67.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <VBox alignment="CENTER" prefHeight="80.0" prefWidth="91.0" styleClass="losetaSelva" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label fx:id="lblLosetaP3" text="22">
+                                                                           <font>
+                                                                              <Font name="Berlin Sans FB Bold" size="19.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="CacaoSol3" alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <ImageView fx:id="p3Cacao1" fitHeight="150.0" fitWidth="45.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p3Cacao2" fitHeight="150.0" fitWidth="45.0" layoutX="172.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p3Cacao3" fitHeight="150.0" fitWidth="45.0" layoutX="200.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p3Cacao4" fitHeight="150.0" fitWidth="45.0" layoutX="228.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p3Cacao5" fitHeight="150.0" fitWidth="45.0" layoutX="256.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p3Sol1" fitHeight="150.0" fitWidth="45.0" layoutX="284.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p3Sol2" fitHeight="150.0" fitWidth="45.0" layoutX="312.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p3Sol3" fitHeight="150.0" fitWidth="45.0" layoutX="346.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="Cenote3" alignment="CENTER" prefHeight="50.0" prefWidth="380.0" spacing="4.0">
+                                                               <children>
+                                                                  <VBox fx:id="p3C1" alignment="CENTER" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                     <children>
+                                                                        <Label text="-10">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p3C2" alignment="CENTER" layoutX="183.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="-4">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p3C3" alignment="CENTER" layoutX="202.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="-1">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p3C4" alignment="CENTER" layoutX="221.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="0">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p3C5" alignment="CENTER" layoutX="240.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="2">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p3C6" alignment="CENTER" layoutX="259.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="4">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p3C7" alignment="CENTER" layoutX="278.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="7">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p3C8" alignment="CENTER" layoutX="297.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="11">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p3C9" alignment="CENTER" layoutX="316.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="16">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="4.0" right="4.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox fx:id="player4" alignment="TOP_CENTER" layoutX="10.0" layoutY="442.0" minHeight="220.0" prefHeight="220.0" prefWidth="350.0" styleClass="card" stylesheets="@styles.css" visible="false">
+                                                         <children>
+                                                            <HBox fx:id="infoP1111" alignment="CENTER" spacing="10.0">
+                                                               <children>
+                                                                  <Label fx:id="nombreP4" text="Elias">
+                                                                     <font>
+                                                                        <Font name="Berlin Sans FB Bold" size="15.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <VBox fx:id="oroP1111" alignment="CENTER" prefHeight="19.0" prefWidth="37.0" styleClass="oro" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label fx:id="lblOroP4" text="45">
+                                                                           <font>
+                                                                              <Font name="Berlin Sans FB Bold" size="22.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <Label fx:id="pts4" text="    Pts: 40">
+                                                                     <font>
+                                                                        <Font name="Berlin Sans FB Bold" size="15.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="5.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox fx:id="losetasPlayer4" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <HBox fx:id="losetasJugador4" alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="2.0" HBox.hgrow="ALWAYS">
+                                                                     <children>
+                                                                        <Pane fx:id="p4Img1" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                        <Pane fx:id="p4Img2" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                        <Pane fx:id="p4Img3" layoutX="67.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane1" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <VBox alignment="CENTER" prefHeight="80.0" prefWidth="91.0" styleClass="losetaSelva" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label fx:id="lblLosetaP4" text="22">
+                                                                           <font>
+                                                                              <Font name="Berlin Sans FB Bold" size="19.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="CacaoSol4" alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <ImageView fx:id="p4Cacao1" fitHeight="150.0" fitWidth="45.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p4Cacao2" fitHeight="150.0" fitWidth="45.0" layoutX="172.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p4Cacao3" fitHeight="150.0" fitWidth="45.0" layoutX="200.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p4Cacao4" fitHeight="150.0" fitWidth="45.0" layoutX="228.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p4Cacao5" fitHeight="150.0" fitWidth="45.0" layoutX="256.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/cacao.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p4Sol1" fitHeight="150.0" fitWidth="45.0" layoutX="284.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p4Sol2" fitHeight="150.0" fitWidth="45.0" layoutX="312.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ImageView fx:id="p4Sol3" fitHeight="150.0" fitWidth="45.0" layoutX="346.0" layoutY="32.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../images/fichaSol.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="Cenote4" alignment="CENTER" prefHeight="50.0" prefWidth="380.0" spacing="4.0">
+                                                               <children>
+                                                                  <VBox fx:id="p4C1" alignment="CENTER" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                     <children>
+                                                                        <Label text="-10">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p4C2" alignment="CENTER" layoutX="183.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="-4">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p4C3" alignment="CENTER" layoutX="202.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="-1">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p4C4" alignment="CENTER" layoutX="221.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="0">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p4C5" alignment="CENTER" layoutX="240.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="2">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p4C6" alignment="CENTER" layoutX="259.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="4">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p4C7" alignment="CENTER" layoutX="278.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="7">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p4C8" alignment="CENTER" layoutX="297.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="11">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                                  <VBox fx:id="p4C9" alignment="CENTER" layoutX="316.0" layoutY="10.0" opacity="0.41" prefHeight="32.0" prefWidth="28.0" styleClass="circulo" stylesheets="@styles.css">
+                                                                     <children>
+                                                                        <Label text="16">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="12.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" />
+                                                                     </HBox.margin>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets left="4.0" right="4.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                             <styleClass>
+                                                <String fx:value="scroll-bar" />
+                                                <String fx:value="paneScroll" />
+                                             </styleClass>
+                                          </ScrollPane>
+                                       </right>
+                                       <bottom>
+                                          <Pane prefHeight="0.0" prefWidth="960.0" BorderPane.alignment="CENTER" />
+                                       </bottom>
+                                    </BorderPane>
+                                 </children>
+                              </VBox>
+                              <HBox fx:id="ct" alignment="BOTTOM_RIGHT" layoutX="731.0" layoutY="584.0" prefHeight="48.0" prefWidth="222.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="731.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="584.0">
+                                 <children>
+                                    <JFXButton fx:id="btnStart" alignment="CENTER" buttonType="RAISED" contentDisplay="RIGHT" layoutX="-9.0" layoutY="2.0" onAction="#startGame" prefHeight="38.0" prefWidth="107.0" ripplerFill="#3ed62a" style="-fx-background-color: #3ed62a;" text="START" textAlignment="CENTER" textFill="#361010">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="2em" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton alignment="BASELINE_CENTER" contentDisplay="CENTER" onAction="#openChat" style="-fx-background-color: transparent;" text="." textAlignment="CENTER" textFill="#b57373">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="#b57373" glyphName="COMMENTS" size="4em" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Bold" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <ImageView fitHeight="39.0" fitWidth="44.0" onMouseClicked="#refreshSpace" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/loading.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets bottom="6.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="ct2" alignment="BOTTOM_CENTER" layoutX="503.0" layoutY="594.0" prefHeight="56.0" prefWidth="47.0" visible="false" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="503.0" AnchorPane.rightAnchor="413.0">
+                                 <children>
+                                    <JFXButton alignment="BASELINE_CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#approveMove" style="-fx-background-color: transparent;" text="." textAlignment="CENTER" textFill="#23cc4d">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="#23cc4d" glyphName="CHECK" size="4em" text="" />
+                                       </graphic>
+                                       <font>
+                                          <Font name="Berlin Sans FB Bold" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="offLine" alignment="CENTER" layoutX="154.0" layoutY="9.0" prefHeight="33.0" prefWidth="300.0" visible="false">
+                                 <children>
+                                    <JFXButton fx:id="btnStart1" alignment="CENTER" buttonType="RAISED" contentDisplay="RIGHT" layoutX="-9.0" layoutY="2.0" onAction="#ReconnectGame" prefHeight="16.0" prefWidth="107.0" ripplerFill="#a8c9a4" style="-fx-background-color: #3ed62a;" text="Reconnect" textAlignment="CENTER" textFill="#361010">
+                                       <font>
+                                          <Font name="Berlin Sans FB Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <Label text="Fuera de linea">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="offLine1" alignment="CENTER" layoutX="441.0" layoutY="11.0" prefHeight="25.0" prefWidth="125.0">
+                                 <children>
+                                    <Label fx:id="whoIsPlaying" style="-fx-background-color: #3ed62a;">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </StackPane>
+         </content>
+         <styleClass>
+            <String fx:value="paneScroll" />
+            <String fx:value="paneScroll" />
+         </styleClass>
+      </ScrollPane>
+      <StackPane fx:id="StartLoading" layoutX="10.0" layoutY="10.0" prefHeight="650.0" prefWidth="1003.0" style="-fx-background-color: #29323c;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Circle fx:id="CircleStart_1" fill="#ff1f1f00" radius="133.0" stroke="#9a6868" strokeType="INSIDE" strokeWidth="6.0" style="-fx-stroke-dash-array: 20;" />
+            <Circle fx:id="CircleStart_2" fill="#1f93ff00" radius="104.0" stroke="#a34887" strokeType="INSIDE" strokeWidth="6.0" style="-fx-stroke-dash-array: 80;" />
+            <ImageView fx:id="avatar1" fitHeight="137.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/cacao.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

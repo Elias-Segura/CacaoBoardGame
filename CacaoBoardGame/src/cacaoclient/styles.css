@@ -1,0 +1,135 @@
+.jfx-text-field{
+    
+    -fx-prompt-text-fill: #2a7886; 
+    -fx-text-fill: white; 
+    
+}
+.jfx-text-field:focus{
+     -fx-background-color: #27496d;
+
+}
+.jfx-text-field:hover{
+    -fx-background-color: #27496d;
+    -fx-prompt-text-fill: #e1ccec; 
+  
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color :transparent;
+    -fx-border-color :transparent;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar:horizontal .increment-button ,
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 0.0 10.0 0.0;
+
+}
+
+.scroll-bar:vertical .track-background,
+.scroll-bar:horizontal .track-background {
+   -fx-background-color: transparent;
+   -fx-background-insets: 0;
+   -fx-background-radius: 2em;
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color : #dddddd;
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color : #9e9e9e;
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar{
+   -fx-background-color: transparent;
+   -fx-background-radius: 2em;
+   -fx-focus-color: transparent;
+   -fx-faint-focus-color: transparent;
+}
+
+.scroll-bar:vertical:focused {
+   -fx-background-color: transparent;
+}
+
+.pane{
+          -fx-background-image: url("../images/losetaSelva1.png"); -fx-background-size: 100% 100% ;
+}
+.paneScroll{
+    
+    -fx-background: transparent; -fx-background-color: transparent;
+    
+    
+}
+.paneScrollImage{
+          -fx-background-image: url("../images/fondoT.jpg"); -fx-background-size: 100% 100% ;
+}
+.card{
+    
+    
+        -fx-background-color : #9e9e9e;
+    -fx-background-insets : 1.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.pane1{
+            -fx-background-color : red; -fx-background-size: 100% 100% ;
+}
+.oro{
+          -fx-background-image: url("../images/circuloAmarillo.jpg"); -fx-background-size: 100% 100% ;
+}
+.circulo{
+          -fx-background-image: url("../images/circulo.png"); -fx-background-size: 100% 100% ;
+}
+.losetaSelva{
+          -fx-background-image: url("../images/losetaSelvaFondo.png"); -fx-background-size: 100% 100% ;
+}
+
+.chatLabel{
+    
+        -fx-background-color : #1cc7d0;
+    -fx-background-insets : 1.0, 0.0, 0.0;
+    -fx-background-radius : 1.0em;
+    
+    
+    
+}
+.textFlow{
+    -fx-background-color: linear-gradient(to left, #ff512f, #dd2476);
+    -fx-background-insets: -5 -10 -5 -5;
+    -fx-effect: dropshadow(three-pass-box,rgba(0,0,0,0.08),2,1.0,0.5,0.5);
+    -fx-shape: "M 94.658379,129.18587 H 46.277427 c -3.545458,0.23354 -5.32763,-1.59167 -5.14193,-4.67449
+    v -19.39913 c 0.405797,-3.73565 2.470637,-4.56641 5.14193,-4.90821 h 43.706464 c 2.572701,0.2361 4.604321,
+    1.68288 4.674488,4.90821 v 19.39913 c 0.436089,3.14572 2.890695,3.57304 4.908212,4.67449 z";
+}
+
+
